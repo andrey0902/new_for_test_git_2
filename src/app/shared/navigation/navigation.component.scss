@@ -1,0 +1,35 @@
+:host{
+  display: flex;
+  height: 100%;
+}
+
+.nav {
+  display: flex;
+  height: 100%;
+
+  &-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #90a3ab;
+    text-decoration: none;
+    padding: 0 15px;
+    height: 50px;
+    box-sizing: border-box;
+
+    border-bottom: 2px solid transparent;
+    transition: .2s ease;
+
+    &:hover, &:active {
+      border-bottom: 2px solid #46ffc6;
+      text-decoration: none;
+    }
+
+  }
+
+  &-link.active {
+    color: white;
+    font-weight: bold;
+    border-bottom: 2px solid #46ffc6;
+  }
+}

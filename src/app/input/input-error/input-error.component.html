@@ -1,0 +1,14 @@
+
+<ng-container *ngIf="errorMessage; else allError">
+  <div class="errors-type">
+    {{errorMessage}}
+  </div>
+</ng-container>
+
+<ng-template #allError>
+  <div class="errors-type">
+    <p class="error-message" *ngFor="let error of errorMessage">
+      {{error}}
+    </p>
+  </div>
+</ng-template>

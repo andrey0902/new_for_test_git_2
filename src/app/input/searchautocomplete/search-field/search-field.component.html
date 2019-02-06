@@ -1,0 +1,25 @@
+<div class="wrapper-search"(keydown.ArrowDown)="nextActive()"
+     (keydown.ArrowUp)="prevActive()">
+  <div class="wrapper-field-search">
+    <input type="text"
+           class="typehead-control"
+           [formControl]="searchControl"
+           [placeholder]="placeholder"
+           (blur)="focusChange(false)"
+           (focus)="focusChange(true)"
+    >
+  </div>
+  <div class="wrapper-data" *ngIf="searchResult?.length"
+       appClickOutSide (clickOutside)="setDefaultParams()"
+
+  >
+    <app-dropdown-item *ngFor="let item of searchResult; let index=index"
+                       [data]="item"
+                       [template]="itemTemplate"
+                       (choseItem)="onChoseItem($event)"
+                       (mouseHover)="setActive($event)"
+                       [active]="activeItem"
+                       [index]="index"
+    ></app-dropdown-item>
+  </div>
+</div>

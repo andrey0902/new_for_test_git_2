@@ -1,0 +1,13 @@
+@import "../search-field/search-field.component";
+.active {
+  background-color: $focus-blue;
+  color: $whit-background;
+
+}
+
+.wrapper-item-element {
+  cursor: pointer;
+  padding: 7px;
+  display: flex;
+  transition: .2s ease;
+}

@@ -1,0 +1,16 @@
+<div class="radio-wrapper">
+  <input [id]="id"
+         type="radio"
+         [disabled]="host?.disabled"
+         (change)="select()"
+         [attr.name]="host?.groupName || name"
+         [checked]="checkedValue()"
+
+  >
+  <label [for]="id" class="circle-radio-label">
+    <span class="text">
+      <ng-content></ng-content>
+    </span>
+
+  </label>
+</div>

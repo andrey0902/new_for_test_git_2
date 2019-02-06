@@ -1,0 +1,164 @@
+
+.profile {
+
+  &-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #90a3ab;
+    text-decoration: none;
+    padding: 0 15px;
+    height: 50px;
+    box-sizing: border-box;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+
+    border-bottom: 2px solid transparent;
+    transition: .2s ease;
+
+    &:hover .dropdown-data {
+      visibility: visible;
+      opacity: 1;
+    }
+
+  }
+
+  &-btn.active {
+    color: white;
+    font-weight: bold;
+    border-bottom: 2px solid #46ffc6;
+  }
+
+  &-info {
+    padding: 17px 5px;
+    display: flex;
+    border-bottom: 1px solid #2b4d5e;
+  }
+
+  &-user-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 10px;
+
+    img {
+      height: 100%;
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-user-text {
+
+  }
+
+  &-user-name {
+    margin: 0;
+    font-weight: bold;
+    padding: 5px 0;
+    color: white;
+  }
+
+  &-user-link {
+    text-decoration: none;
+    color: #90a3ab;
+  }
+
+  &-nav {
+    padding-left: 30px;
+
+    &-item {
+      height: 48px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #2b4d5e;
+      box-sizing: border-box;
+
+      &:last-child {
+        border-bottom: 1px solid transparent;
+      }
+    }
+
+    &-link {
+      font-size: 15px;
+      text-decoration: none;
+      color: #90a3ab;
+
+      &:hover, &:active {
+        text-decoration: none;
+      }
+    }
+  }
+
+}
+
+.material-icons {
+  color: #46ffc6;
+  padding-left: 5px;
+}
+
+.dropdown {
+
+  &-data {
+    visibility: hidden;
+    opacity: 0;
+    width: 250px;
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 10px;
+    border-radius: 6px;
+    background: linear-gradient(to bottom left, #0b2942, #20505d);
+    border: 1px solid #35626c;
+    z-index: 2;
+
+    transition: all .2s linear;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -5px;
+      left: 0;
+      background: transparent;
+      height: 10px;
+      width: 100%;
+      z-index: 3;
+    }
+
+  }
+}
+
+.data-wrap {
+  position: relative;
+  
+    &:before {
+      content: '';
+      border: 6px solid transparent;
+      border-bottom: 12px solid #0c2b43;
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: -18px;
+      right: 21px;
+      z-index: 3;
+
+    }
+  &:after {
+    content: '';
+    border: 6px solid transparent;
+    border-bottom: 12px solid #35626c;
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -19px;
+    right: 21px;
+    z-index: 2;
+
+  }
+}

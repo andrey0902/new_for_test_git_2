@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  height: 100%;
+}
+.tab {
+
+  &-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    color: #8fa7ad;
+    transition: .2s ease;
+    height: 100%;
+    box-sizing: border-box;
+
+    &:hover {
+      border-bottom: 2px solid #46ffc6;
+    }
+  }
+}
+
+.active {
+  border-bottom: 2px solid #46ffc6;
+  font-weight: bold;
+  color: #ffffff;
+}

@@ -1,0 +1,107 @@
+@import "../../shared/style.variable";
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
+$md-radio-size: 20px;
+$md-radio-checked-size: 10px;
+$md-radio-ripple-size: 15px;
+
+//@keyframes ripple {
+//  0% {
+//    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.0);
+//  }
+//  50% {
+//    box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0.1);
+//  }
+//  100% {
+//    box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(0, 0, 0, 0);
+//  }
+//}
+
+@keyframes ripple1 {
+  0% {
+    box-shadow: 0px 0px 0px 1px rgba(51, 122, 183, .1);
+  }
+  50% {
+    box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(51, 122, 183, .3);
+  }
+  100% {
+    box-shadow: 0px 0px 0px $md-radio-ripple-size rgba(51, 122, 183, 0);
+  }
+}
+
+.tab-label {
+  cursor: pointer;
+  position: relative;
+  left: 4px;
+  display: flex;
+  align-items: center;
+  min-height: 20px;
+  margin-bottom: 10px;
+}
+
+.radio-circle {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  position: relative;
+  right: 5px;
+  top: 2px;
+
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+//
+//.radio-wrapper input:checked + label .radio-circle {
+//  border-width: 0;
+//}
+
+.radio-wrapper {
+  margin: 16px 0;
+
+  input[type="radio"] {
+    display: none;
+    &:checked + .circle-radio-label:before {
+      animation: ripple1 0.2s linear forwards;
+    }
+
+    &:disabled + .circle-radio-label {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+  }
+
+  .circle-radio-label {
+    display: inline-block;
+    height:$md-radio-size;
+    position: relative;
+    padding: 0 ($md-radio-size + 10px);
+    margin-bottom: 0;
+    cursor: pointer;
+    vertical-align: bottom;
+
+    &:before, &:after {
+      position: absolute;
+      content: '';
+      border-radius: 50%;
+      transition: all .3s ease;
+     // transition-property: transform, border;
+    }
+
+    &:before {
+      left: 0;
+      top: 0;
+      width: $md-radio-size;
+      height: $md-radio-size;
+      border: 2px solid $md-radio-border-color;
+    }
+  }
+
+  & input:checked + label::before {
+    border: 5px solid $main-blue;
+  }
+
+}

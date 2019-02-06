@@ -1,0 +1,68 @@
+@import "../../shared/style.variable";
+app-slide-box {
+  outline: none;
+}
+
+.checkbox-slider {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 1em;
+  > input {
+    display: none;
+  }
+
+  span {
+    color: #6A759B;
+  }
+
+  .checkbox-point {
+    display: flex;
+    width: 25px;
+    height: 15.6px;
+    border-radius: 20px;
+    vertical-align: middle;
+    transition: .25s .09s;
+    position: relative;
+    background: $default-background-checkbox;
+    margin-right: 10px;
+    &:after {
+      content: " ";
+      display: block;
+      width: 11px;
+      height: 11px;
+      top: 50%;
+      left: 0;
+      border-radius: 50%;
+      background: #fff;
+      position: absolute;
+      box-shadow: 1px 2px 4px 0 rgba(#000, .4);
+      transition: .15s;
+      transform: translate(10%, -55%)
+    }
+  }
+
+  // Checked-state
+  > input:checked + .checkbox-point {
+    background: $focus-blue;
+  }
+
+  > input:checked + .checkbox-point + span {
+    color: $active-color;
+  }
+
+  > input:checked + .checkbox-point:after {
+    transform: translate(100%, -55%);
+  }
+
+  > input:disabled + .checkbox-point,  > input:disabled + .checkbox-point + .content-text {
+    opacity: .5;
+    cursor: not-allowed;
+  }
+  // text not apply opacety
+  //> input:disabled + .checkbox-point + .content-text {
+  //  cursor: not-allowed;
+  //}
+}

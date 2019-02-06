@@ -1,0 +1,9 @@
+<div class="wrapper-field">
+    <label class="checkbox-slider" [for]="id" >
+      <input class="cb cb1" [id]="id" type="checkbox" name="social" [ngModel]="defaultValue" [disabled]="disabled" (ngModelChange)="onChange($event)"/>
+      <i class="checkbox-point"></i>
+      <span class="content-text">
+        <ng-content></ng-content>
+      </span>
+    </label>
+</div>

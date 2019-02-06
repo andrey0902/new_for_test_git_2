@@ -1,0 +1,24 @@
+<nav class="nav">
+  <a class="nav-link" routerLink="/1" routerLinkActive="active">
+    Home
+  </a>
+  <a class="nav-link" routerLink="/connections" routerLinkActive="active">
+    Connections
+  </a>
+  <a class="nav-link" routerLink="/messages" routerLinkActive="active">
+    Messages
+  </a>
+  <a class="nav-link" routerLink="/notifications" [routerLinkActive]="'active'">
+    Notifications
+  </a>
+  <a class="nav-link" routerLink="/teams-management" routerLinkActive="active">
+    Teams Management
+  </a>
+
+  <!--<a class="nav-link" routerLink="/profile" routerLinkActive="active">-->
+    <!--Profile-->
+  <!--</a>-->
+
+  <app-profile-menu>
+  </app-profile-menu>
+</nav>

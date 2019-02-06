@@ -1,0 +1,25 @@
+<p>
+  settings-menu works!
+</p>
+
+
+
+<div class="dropdown">
+  <button class="dropbtn">
+    <i class="material-icons" *ngIf="positionHorizontal">
+      more_horiz
+    </i>
+
+    <i class="material-icons" *ngIf="!positionHorizontal">
+      more_vert
+    </i>
+
+    <div class="dropdown-content">
+      <ng-content select="app-settings-menu-item"></ng-content>
+      <!--<a href="#">Link 1</a>-->
+      <!--<a href="#">Link 2</a>-->
+      <!--<a href="#">Link 3</a>-->
+    </div>
+  </button>
+
+</div>

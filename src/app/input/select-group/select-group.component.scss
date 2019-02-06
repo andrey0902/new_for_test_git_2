@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+.group {
+  &-option {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-wrap {
+    p {
+      padding: 3px .75rem;
+    }
+  }
+}
+

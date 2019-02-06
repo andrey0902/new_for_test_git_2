@@ -1,0 +1,26 @@
+.header {
+
+  &-wrap {
+    height: 50px;
+    background: linear-gradient(to left, #0a2741, #20515d);
+    padding: 0 150px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.logo {
+  color: white;
+  font-size: 26px;
+
+  &-wrap {
+    width: 50px;
+    padding-right: 20px;
+  }
+}
+
+.typeahead-wrap {
+  width: 390px;
+  padding-right: 15px;
+}

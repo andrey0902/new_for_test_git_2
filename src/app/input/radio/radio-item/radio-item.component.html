@@ -1,0 +1,13 @@
+<div class="point-radio">
+  <input [id]="id"
+         type="radio"
+         [disabled]="host?.disabled"
+         (change)="select()"
+         [attr.name]="host?.groupName || name"
+         [checked]="checkedValue()"
+
+  >
+  <label class="radio-label" [for]="id">
+    <ng-content></ng-content>
+  </label>
+</div>

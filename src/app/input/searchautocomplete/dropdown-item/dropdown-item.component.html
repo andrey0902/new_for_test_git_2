@@ -1,0 +1,16 @@
+<div class="wrapper-item-element"
+     (click)="select()"
+     (mouseenter)="isHover()"
+     [class.active]="getActive()"
+     (keydown.enter)="isChoose()"
+
+>
+  <ng-container *ngTemplateOutlet="template? template : default; context:data"></ng-container>
+
+</div>
+
+<ng-template #default>
+  <div class="item-detail">
+    default template - {{data.item.name}}
+  </div>
+</ng-template>

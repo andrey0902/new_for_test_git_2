@@ -1,0 +1,11 @@
+@import "../shared/style.variable";
+app-select-option {
+  cursor: pointer;
+  border-bottom: 1px solid $border-input;
+  padding: 5px 1.25rem;
+  background: white;
+  &:hover {
+    background: $main-blue;
+    color: white;
+  }
+}

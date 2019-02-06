@@ -1,0 +1,14 @@
+.wrap-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(to right, #20515d, #0a2741);
+  height: 60px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  padding: 0 30px 0 20px;
+}
+
+//.active {
+//  display: block;
+//}

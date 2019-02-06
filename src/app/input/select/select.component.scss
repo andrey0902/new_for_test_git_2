@@ -1,0 +1,95 @@
+@import "../shared/style.variable";
+$disable-color: gray;
+
+app-select{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $border-input;
+  border-radius: 0.25rem;
+  background: white;
+  width: 100%;
+  order: 1;
+  .form-control{
+    order: 0;
+  }
+  .select{
+    &__list{
+      position: relative;
+      background: white;
+      left: -1px;
+      &-items{
+        border: 1px solid $border-input;
+        background-color: #ffffff;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        max-height: 120px;
+        overflow-y: auto;
+        z-index: 999;
+      }
+    }
+    &__placeholder{
+      padding: .375rem .75rem;
+      line-height: 1.5;
+      display: flex;
+      cursor: pointer;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+    }
+
+    &-icon_svg {
+      transition: .3s ease;
+    }
+
+    &-open {
+      transform: scaleY(-1);
+    }
+  }
+
+  &.ng-invalid.ng-touched.ng-dirty {
+    border-color: $error-color;
+    .select {
+      &-icon_svg {
+        fill: $error-color;
+      }
+
+      &__placeholder {
+        color: $error-color;
+      }
+    }
+  }
+}
+
+.select__placeholder[hidden] {
+  display: none;
+}
+
+.select__search-wrap {
+  display: flex;
+  border-radius: 0.25rem;
+  background: white;
+  width: 100%;
+}
+
+input[type='text'].select-search {
+  height: auto;
+  border: none;
+  padding: .375rem .75rem;
+}
+
+.disabled {
+  cursor: not-allowed;
+  color: $disable-color;
+
+  .select {
+    &-icon_svg {
+      fill: $disable-color;
+    }
+
+    &__placeholder {
+      cursor: not-allowed;
+    }
+  }
+}

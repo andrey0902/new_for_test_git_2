@@ -1,0 +1,35 @@
+<div class="wrapper-field" [class.mode]="mode">
+  <div class="wrapper-label" *ngIf="!mode">
+    <ng-content select="app-label"></ng-content>
+  </div>
+  <div class="wrapper-control" [class.placeholder-hide]="mode">
+    <ng-content></ng-content>
+    <span class="form-field-label-wrapper"
+          *ngIf="mode"
+    >
+      <label [for]="appInput.id"
+             class="placeholder-label"
+             [class.placeholder-float]="appInput.focused || appInput.value?.length"
+      >
+      {{appInput.placeholder}}
+    </label>
+    </span>
+  </div>
+  <div class="wrapper-error">
+    <ng-content select="app-input-error"></ng-content>
+    <div class="errors-type">
+      <ng-content select="app-server-error"></ng-content>
+    </div>
+  </div>
+</div>
+
+
+<!--DEFAULT-->
+<!--<div class="wrapper-field">-->
+  <!--<div class="wrapper-label">-->
+    <!--<ng-content select="app-label"></ng-content>-->
+  <!--</div>-->
+  <!--<div class="wrapper-control">-->
+    <!--<ng-content></ng-content>-->
+  <!--</div>-->
+<!--</div>-->
